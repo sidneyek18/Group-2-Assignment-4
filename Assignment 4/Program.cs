@@ -23,8 +23,9 @@ namespace Assignment_4
                 // Enable drawing to the canvas (window)
                 Raylib.BeginDrawing();
                 // Clear the canvas with one color
-                Raylib.ClearBackground(Color.White);
-
+                Raylib.ClearBackground(Color.Black);
+                //Draw a white line in the middle
+                Raylib.DrawLine(0, 300, 800, 300, Color.White);
                 // Your game code here. This is a function YOU define.
                 Update();
 
@@ -44,6 +45,7 @@ namespace Assignment_4
         }
         static void Update()
         {
+           
             p1.Move();
             p1.CheckPlayerWallCollision();
             p1.RenderPlayer();
