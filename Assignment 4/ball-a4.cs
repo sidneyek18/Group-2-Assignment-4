@@ -17,8 +17,8 @@ namespace ballA
             int x = screenWidth / 2; // Initial x position
             int y = screenHeight / 2; // Initial y position
             int radius = 20; // Circle radius
-            int speed_x = 5; // Horizontal speed
-            int speed_y = 5; // Vertical speed
+            int speed_x = 6; // Horizontal speed
+            int speed_y = 6; // Vertical speed
 
             while (!Raylib.WindowShouldClose())
             {
