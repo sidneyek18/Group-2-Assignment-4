@@ -1,9 +1,9 @@
-﻿using Raylib_cs;
-using System;
+﻿using System;
+using Raylib_cs;
 
-namespace ass4_practice
+namespace ballA
 {
-    class Program
+    internal static class Program
     {
         static void Main(string[] args)
         {
@@ -11,26 +11,36 @@ namespace ass4_practice
 
             int screenWidth = 800;
             int screenHeight = 600;
-            Raylib.InitWindow(screenWidth, screenHeight, "Pong");
+            Raylib.InitWindow(screenWidth, screenHeight, "ballmovementAmelia");
             Raylib.SetTargetFPS(60);
 
-            int x = screenWidth / 2; // Y position
-            int y = screenHeight / 2; // Y position
-            int radius = 20; // circle radius 
-            int speed_x = 5; // horizontal speed
-            int speed_y = 5; // vertical speed
+            int x = screenWidth / 2; // Initial x position
+            int y = screenHeight / 2; // Initial y position
+            int radius = 20; // Circle radius
+            int speed_x = 5; // Horizontal speed
+            int speed_y = 5; // Vertical speed
 
             while (!Raylib.WindowShouldClose())
             {
+                // Update ball position based on speed
                 x += speed_x;
                 y += speed_y;
+
+                // Check for collisions with window edges
+                if (y + radius >= screenHeight || y - radius <= 0)
+                {
+                    speed_y *= -1; // Reverse vertical speed on collision
+                }
+                if (x + radius >= screenWidth || x - radius <= 0)
+                {
+                    speed_x *= -1; // Reverse horizontal speed on collision
+                }
+
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.Black);
 
                 // Drawing
-                Raylib.DrawCircle(screenWidth / 2, screenHeight / 2, 20, Color.White);
-
-                Raylib.DrawCircle(screenWidth / 2, screenHeight / 2, 20, Color.White);
+                Raylib.DrawCircle(x, y, radius, Color.White);
 
                 Raylib.EndDrawing();
             }
