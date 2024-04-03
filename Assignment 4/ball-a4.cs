@@ -8,8 +8,8 @@ namespace ass4_practice
         {
             Console.WriteLine("Starting the game");
 
-            int screenWidth = 1280;
-            int screenHeight = 800;
+            int screenWidth = 800;
+            int screenHeight = 600;
             Raylib.InitWindow(screenWidth, screenHeight, "Pong");
             Raylib.SetTargetFPS(60);
 
