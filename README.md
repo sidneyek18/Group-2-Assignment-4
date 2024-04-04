@@ -6,3 +6,4 @@ Authors:
 Sidney Kiss - sidneyek18
 Noah Correia - Craz
 Johann Gagui - MmangoRrain
+Amelia Morris - ameliaa9
