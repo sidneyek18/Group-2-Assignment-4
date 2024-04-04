@@ -19,7 +19,7 @@ namespace Assignment_4
         {
             playerposition = new Vector2(25, 300);
             size = new Vector2(10, 50);
-            velocity.Y = 10;
+            velocity.Y = 20;
             velocity.X = 0;
             color = Color.Blue;
 
