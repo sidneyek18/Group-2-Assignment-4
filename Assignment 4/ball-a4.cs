@@ -1,40 +1,47 @@
-﻿using Raylib_cs;
-using System;
+﻿using System;
+using Raylib_cs;
 
-namespace ass4_practice
+namespace ballA
 {
-    class Program
+    internal static class Program
     {
         static void Main(string[] args)
         {
-            const int screenWidth = 800;
-            const int screenHeight = 450;
+            Console.WriteLine("Starting the game");
 
+            int screenWidth = 800;
+            int screenHeight = 600;
             Raylib.InitWindow(screenWidth, screenHeight, "ballmovA");
             Raylib.SetTargetFPS(60);
 
-            int x = screenWidth / 2; // X position
-            int y = screenHeight / 2; // Y position
-            int radius = 20; // circle radius
-            int speed_x = 5; // horizontal speed
-            int speed_y = 5; // vertical speed
+            int x = screenWidth / 2; // Initial x position
+            int y = screenHeight / 2; // Initial y position
+            int radius = 20; // Circle radius
+            int speed_x = 6; // Horizontal speed
+            int speed_y = 6; // Vertical speed
 
             while (!Raylib.WindowShouldClose())
             {
-                // Update
+                // Update ball position based on speed
                 x += speed_x;
                 y += speed_y;
 
-                // Collision detection with screen edges
-                if ((x >= (screenWidth - radius)) || (x <= radius))
-                    speed_x *= -1;
-                if ((y >= (screenHeight - radius)) || (y <= radius))
-                    speed_y *= -1;
+                // Check for collisions with window edges
+                if (y + radius >= screenHeight || y - radius <= 0)
+                {
+                    speed_y *= -1; // Reverse vertical speed on collision
+                }
+                if (x + radius >= screenWidth || x - radius <= 0)
+                {
+                    speed_x *= -1; // Reverse horizontal speed on collision
+                }
 
-                // Draw
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.Black);
+
+                // Drawing
                 Raylib.DrawCircle(x, y, radius, Color.White);
+
                 Raylib.EndDrawing();
             }
 
