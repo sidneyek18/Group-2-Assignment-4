@@ -1,47 +1,40 @@
-﻿using System;
-using Raylib_cs;
+﻿using Raylib_cs;
+using System;
 
-namespace ballA
+namespace ass4_practice
 {
-    internal static class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting the game");
+            const int screenWidth = 800;
+            const int screenHeight = 450;
 
-            int screenWidth = 800;
-            int screenHeight = 600;
-            Raylib.InitWindow(screenWidth, screenHeight, "ballmovementAmelia");
+            Raylib.InitWindow(screenWidth, screenHeight, "ballmovA");
             Raylib.SetTargetFPS(60);
 
-            int x = screenWidth / 2; // Initial x position
-            int y = screenHeight / 2; // Initial y position
-            int radius = 20; // Circle radius
-            int speed_x = 6; // Horizontal speed
-            int speed_y = 6; // Vertical speed
+            int x = screenWidth / 2; // X position
+            int y = screenHeight / 2; // Y position
+            int radius = 20; // circle radius
+            int speed_x = 5; // horizontal speed
+            int speed_y = 5; // vertical speed
 
             while (!Raylib.WindowShouldClose())
             {
-                // Update ball position based on speed
+                // Update
                 x += speed_x;
                 y += speed_y;
 
-                // Check for collisions with window edges
-                if (y + radius >= screenHeight || y - radius <= 0)
-                {
-                    speed_y *= -1; // Reverse vertical speed on collision
-                }
-                if (x + radius >= screenWidth || x - radius <= 0)
-                {
-                    speed_x *= -1; // Reverse horizontal speed on collision
-                }
+                // Collision detection with screen edges
+                if ((x >= (screenWidth - radius)) || (x <= radius))
+                    speed_x *= -1;
+                if ((y >= (screenHeight - radius)) || (y <= radius))
+                    speed_y *= -1;
 
+                // Draw
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.Black);
-
-                // Drawing
                 Raylib.DrawCircle(x, y, radius, Color.White);
-
                 Raylib.EndDrawing();
             }
 
@@ -49,3 +42,11 @@ namespace ballA
         }
     }
 }
+
+
+
+
+
+
+
+
