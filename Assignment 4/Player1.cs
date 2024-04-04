@@ -4,7 +4,7 @@ namespace Assignment_4
 {
     
 
-    internal class Player1
+    public class Player1
     {
         
         Vector2 playerposition;
@@ -65,8 +65,8 @@ namespace Assignment_4
         {
             float leftEdge1 = playerposition.X;
             float rightEdge1 = playerposition.X + size.X;
-            bool doesOverlapLeft = leftEdge1 < rightEdge2;
-            bool doesOverlapRight = rightEdge1 > leftEdge2;
+            bool doesOverlapLeft = leftEdge1 < rightEdge1;
+            bool doesOverlapRight = rightEdge1 > leftEdge1;
 
 
         }

@@ -6,6 +6,8 @@ namespace Assignment_4
     {
         static string title = "PONG";
         static Player1 p1;
+        static Player2 p2;
+        static Ball PongBall;
         static void Main(string[] args)
         {
             // Create a window to draw to. The arguments define width and height
@@ -41,11 +43,15 @@ namespace Assignment_4
         {
             
             p1 = new Player1();
-            
+            p2 = new Player2();
+            PongBall = new Ball();
         }
         static void Update()
         {
-           
+            
+            p2.Move();
+            p2.CheckPlayer2WallCollision();
+            p2.RenderPlayer2();
             p1.Move();
             p1.CheckPlayerWallCollision();
             p1.RenderPlayer();

@@ -1,11 +1,11 @@
 ﻿using System;
 using Raylib_cs;
 
-namespace ballA
+namespace Assignment_4
 {
-    internal static class Program
+    internal class Ball
     {
-        static void Main(string[] args)
+        public void BallConstructor(string[] args)
         {
             Console.WriteLine("Starting the game");
 

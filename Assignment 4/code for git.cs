@@ -7,7 +7,7 @@ namespace Assignment_4
     internal class Player2
     {
         
-        Vector2 playerposition;
+        Vector2 playerposition2;
          Vector2 velocity;
          Vector2 size;
         public Color color;
@@ -17,11 +17,11 @@ namespace Assignment_4
         //player constructor 
         public Player2()
         {
-            player2position = new Vector2(35, 400);
-            size = new Vector2(20, 60);
-            velocity.Y = 20;
+            playerposition2 = new Vector2(775, 300);
+            size = new Vector2(10, 50);
+            velocity.Y = 10;
             velocity.X = 0;
-            color = Color.Blue;
+            color = Color.Red;
 
         }
 
@@ -31,20 +31,20 @@ namespace Assignment_4
             //UP
             if ( Raylib.IsKeyDown(KeyboardKey.Up))
             {
-                playerposition.Y -= velocity.Y;
+                playerposition2.Y -= velocity.Y;
             }
 
             //DOWN
             if (Raylib.IsKeyDown(KeyboardKey.Down))
             {
-                playerposition.Y += velocity.Y;
+                playerposition2.Y += velocity.Y;
             }
         }
         
         //render the paddle 
         public void RenderPlayer2()
         {
-            Raylib.DrawRectangleV(player2position, size, color);
+            Raylib.DrawRectangleV(playerposition2, size, color);
         }
 
         //collision with the walls 
