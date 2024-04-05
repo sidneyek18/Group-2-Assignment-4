@@ -13,6 +13,8 @@ namespace Assignment_4
         public Color color;
         private int screenWidth = 800;
         private int screenHeight = 600;
+        private float rightEdge2;
+        private float leftEdge2;
 
         //player constructor 
         public  Player1()
