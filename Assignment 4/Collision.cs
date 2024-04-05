@@ -5,7 +5,7 @@ public class Collision
     public Collision()
     {
     }
-
+    //edited by jayce for ball collision with screen
     public void BallCollision(Vector2 playerPosition, Vector2 playerSize, Vector2 ballPosition, Vector2 ballSize)
     {
         // Setting edges for player
